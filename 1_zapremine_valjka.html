@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment - Program za računanje zapremine valjka</title>
+</head>
+<body>
+
+<!-- Zadatak
+
+Potrebno je napraviti JavaScript program koji će računati zapreminu valjka.
+
+Potrebna formula za obračunavanje zapremine valjka je:
+
+V = r2 * π * H
+
+    r – poluprečnik osnove valjka
+    H – visina
+    π – konstanta Pi, približno 3,14
+
+Potrebno je omogućiti korisniku da unese vrednosti poluprečnika i visine, obaviti računanje i na
+kraju rezultat prikazati unutar HTML dokumenta ili unutar modalnog prozora za prikaz poruka. -->
+    
+<h2>Program za računanje zapremine valjka</h2>
+
+  <label for="baseRadius">Poluprečnik:</label><br>
+  <input type="number" id="baseRadius" name="" ><br>
+  
+  <label for="height">Visina:</label><br>
+  <input type="number" id="height" name="" ><br><br>
+  
+  <input type="submit" value="Izračunaj" onclick="cylinderCalculator()">
+
+  
+  <script>
+    const r_baseRadius = document.getElementById("baseRadius");
+    const H_height = document.getElementById("height");
+
+    function cylinderCalculator()
+    {
+        const r = parseInt(r_baseRadius.value);
+        const h = parseInt(H_height.value);
+
+        const V = Math.pow(r, 2) * Math.PI * h;
+        alert('Zapremina valjka: '+V)
+    }
+
+  </script>
+</body>
+</html>
