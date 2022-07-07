@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment - Program za obavljanje osnovnih aritmetičkih operacija</title>
+</head>
+<body>
+
+    <!-- Zadatak
+
+    Potrebno je kreirati JavaScript program za obavljanje osnovnih računarskih operacija:
+    sabiranja, oduzimanja, množenja i deljenja. Program je potrebno da funkcioniše na sledeći
+    način. Korisnik unosi tri podatka: prvi broj, operaciju i drugi broj.
+    Na osnovu unetih podataka, potrebno je detektovati koju od operacija je potrebno obaviti
+    i zatim izvršiti računanje. Rezultat je moguće prikazati unutar HTML dokumenta ili unutar
+    modalnog prozora za prikaz poruka.
+    
+    Računske operacije koje je potrebno obaviti definišu se karakterima +, -, *, /.
+    
+    Svaka od tri ulazne vrednosti programa može se preuzeti u zasebnom modalnom prozoru za preuzimanje vrednosti.
+    
+    Primer jednog korišćenja programa bi izgledao ovako:
+    
+        korisnik unosi 3
+        korisnik unosi +
+        korisnik unosi 10
+        program emituje poruku 13
+     -->
+         
+<h2>Program za obavljanje osnovnih računarskih operacija</h2>
+
+  
+  <input type="number" id="number_1" name="" >
+   
+  &nbsp;
+  <button onclick="addition()" id="addition" >+</button>
+  <button onclick="subtraction()" id="subtraction">-</button>
+  <button onclick="multiplication()" id="multiplication">x</button>
+  <button onclick="division()" id="division">/</button>
+  &nbsp;
+  
+  <input type="hidden" id="operator">
+  
+  <input type="number" id="number_2" name="" ><br><br>
+
+  <input type="submit" value="Izračunaj" onclick="calculator()">
+
+  
+  <script>
+    const num1 = document.getElementById("number_1");
+    const num2 = document.getElementById("number_2");
+    const operator = document.getElementById("operator");
+   
+
+    function addition() {
+        operator.value = 'addition';
+    }
+
+    function subtraction() {
+        operator.value = 'subtraction';
+    }
+
+    function multiplication() {
+        operator.value = 'multiplication';
+    }
+
+    function division() {
+        operator.value = 'division';
+    }
+
+
+    function calculator()
+    {
+        const number1 = parseInt(num1.value);
+        const number2 = parseInt(num2.value);
+        let sum;
+        
+
+     switch (operator.value) {
+        case 'addition':
+            sum = isNaN(number1 + number2) ? "Niste uneli broj": number1 + number2;
+            alert(sum);
+            break;
+
+        case 'subtraction':
+        sum = isNaN(number1 - number2) ? "Niste uneli broj": number1 - number2;
+            alert(sum);
+            break;
+        
+            case 'multiplication':
+        sum = isNaN(number1 * number2) ? "Niste uneli broj": number1 * number2;
+            alert(sum);
+            break;
+        
+            case 'division':
+        sum = isNaN(number1 / number2) ? "Niste uneli broj": number1 / number2;
+            alert(sum);
+            break;
+     
+        default:
+            alert('Niste uneli ni jednu operaciju ')
+            break;
+     }
+        
+    }
+
+  </script>
+</body>
+</html>
